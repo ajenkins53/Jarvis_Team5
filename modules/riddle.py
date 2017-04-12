@@ -17,4 +17,10 @@ def process(input, entities = None):
 		'''
 		with open(config.RIDDLES_SOURCE_FILE) as riddles_file:
 			riddles = json.load(riddles_file)
-			riddles_list = riddles['']
+			riddles_list = riddles['riddles']
+			output['input'] = input
+			output['output'] = TextTemplate(choice(riddles_list)).get_message()
+			output['success'] = True
+	except:
+		output['success'] = False
+	return output
