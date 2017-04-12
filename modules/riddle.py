@@ -9,7 +9,7 @@ def process(input, entities = None):
 	try:
 		'''
 		# Programming riddles
-		r = requests.get('http://quotes.stromconsultancy.co.uk/random.json') //look at http
+		r = requests.get('http://quotes.stromconsultancy.co.uk/random.json') 
 		data = r.json()
 		output['input'] = input
 		output['output'] = TextTemplate(data['quote'] + ' _ ' + data['author']).get_message()
